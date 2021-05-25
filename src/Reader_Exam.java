@@ -15,7 +15,7 @@ public class Reader_Exam {
 
     public static void main(String[] args)
     {
-        List<Exam> Examene = Read_Exam("C:\\Users\\andre\\IntelliJIDEAProjects\\proiect_lab\\src\\Exams.csv");
+        List<Exam> Examene = Read_Exam("src\\Exams.csv");
         for (Exam t : Examene)
         {
             System.out.println(t);
@@ -58,9 +58,10 @@ public class Reader_Exam {
 
     private static Exam createExam(String[] vector)
     {
-        String date= vector[0];
-        String grupa= vector[1];
-        return new Exam(date,grupa);
+        Integer id=Integer.parseInt(vector[0]);
+        String date= vector[1];
+        String grupa= vector[2];
+        return new Exam(id,date,grupa);
 
     }
 }

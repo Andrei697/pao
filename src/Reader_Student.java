@@ -15,7 +15,7 @@ public class Reader_Student {
 
     public static void main(String[] args)
     {
-        List<Student> Studenti = Read_Student("C:\\Users\\andre\\IntelliJIDEAProjects\\proiect_lab\\src\\Students.csv");
+        List<Student> Studenti = Read_Student("C:\\Users\\andre\\IntelliJIDEAProjects\\pao\\src\\Students.csv");
         for (Student t : Studenti)
         {
             System.out.println(t);
@@ -60,12 +60,12 @@ public class Reader_Student {
     private static Student createStudent(String[] vector)
     {
 
-        Teacher t = new Teacher(vector[1], Integer.parseInt(vector[2]), vector[3]);
-        Course c = new Course(vector[0], t, vector[4]);
-        Integer grade = Integer.parseInt(vector[5]);
-        String nume = vector[6];
-        String prenume = vector[7];
-        String cnp = vector[8];
+        Teacher t = new Teacher(Integer.parseInt(vector[2]) ,vector[3], Integer.parseInt(vector[4]), vector[5]);
+        Course c = new Course(Integer.parseInt(vector[0]), vector[1], t, vector[6]);
+        Integer grade = Integer.parseInt(vector[7]);
+        String nume = vector[8];
+        String prenume = vector[9];
+        String cnp = vector[10];
         return new Student(c, grade, nume, prenume, cnp);
 
     }

@@ -3,8 +3,8 @@ public class Laborator extends  Course {
     public Laborator() {
     }
 
-    public Laborator(String course_name, Teacher course_teacher, String perioada_predare) {
-        super(course_name, course_teacher, perioada_predare);
+    public Laborator(Integer id, String course_name, Teacher course_teacher, String perioada_predare) {
+        super(id, course_name, course_teacher, perioada_predare);
     }
 
     @Override

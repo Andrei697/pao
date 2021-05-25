@@ -3,16 +3,19 @@ import java.util.Objects;
 
 public class Exam extends Quiz {
 
+    private Integer Id;
     private String Date;
     private String Grupa_care_sustine;
 
-    public Exam(String date, String grupa_care_sustine) {
+    public Exam( Integer id, String date, String grupa_care_sustine) {
+        Id=id;
         Date = date;
         Grupa_care_sustine = grupa_care_sustine;
     }
 
-    public Exam(List<Question> questions, Integer total_score, Integer difficulty, String date, String grupa_care_sustine) {
+    public Exam(List<Question> questions, Integer total_score, Integer difficulty,Integer id, String date, String grupa_care_sustine) {
         super(questions, total_score, difficulty);
+        Id=id;
         Date = date;
         Grupa_care_sustine = grupa_care_sustine;
     }

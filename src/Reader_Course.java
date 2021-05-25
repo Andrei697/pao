@@ -15,7 +15,7 @@ public class Reader_Course {
 
     public static void main(String[] args)
     {
-        List<Course> Cursuri = Read_Course("C:\\Users\\andre\\IntelliJIDEAProjects\\proiect_lab\\src\\Courses.csv");
+        List<Course> Cursuri = Read_Course("C:\\Users\\andre\\IntelliJIDEAProjects\\pao\\src\\Courses.csv");
         for (Course t : Cursuri)
         {
             System.out.println(t);
@@ -59,11 +59,11 @@ public class Reader_Course {
 
     private static Course createCourse(String[] vector)
     {
-
-        String name= vector[0];
-        Teacher t = new Teacher(vector[1], Integer.parseInt(vector[2]), vector[3]);
-        String perioada= vector[4];
-        return new Course(name, t, perioada);
+        Integer id=Integer.parseInt(vector[0]);
+        String name= vector[1];
+        Teacher t = new Teacher(Integer.parseInt(vector[2]),vector[3], Integer.parseInt(vector[4]), vector[5]);
+        String perioada= vector[6];
+        return new Course(id,name, t, perioada);
 
     }
 }

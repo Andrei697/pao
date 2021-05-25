@@ -1,6 +1,7 @@
 import java.util.Objects;
 
 public class Teacher {
+    private Integer id;
     private String name;
     private Integer grade;
     private String salary;
@@ -8,10 +9,19 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(String name, Integer grade, String salary) {
+    public Teacher(int id, String name, Integer grade, String salary) {
+        this.id = id;
         this.name = name;
         this.grade = grade;
         this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -23,7 +33,9 @@ public class Teacher {
         if (this == o) return true;
         if (!(o instanceof Teacher)) return false;
         Teacher teacher = (Teacher) o;
-        return Objects.equals(getName(), teacher.getName()) &&
+
+        return Objects.equals(getId(), teacher.getId()) &&
+                Objects.equals(getName(), teacher.getName()) &&
                 Objects.equals(getGrade(), teacher.getGrade()) &&
                 Objects.equals(getSalary(), teacher.getSalary());
     }
@@ -63,6 +75,6 @@ public class Teacher {
     }
     public String toCSV()
     {
-        return name+","+grade+","+salary;
+        return id + "," + name+","+grade+","+salary;
     }
 }

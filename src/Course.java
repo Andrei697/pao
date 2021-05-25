@@ -2,6 +2,7 @@ import java.util.Objects;
 
 public class Course {
 
+    private Integer id;
     private String course_name;
     private Teacher course_teacher;
     private String perioada_predare;
@@ -9,18 +10,31 @@ public class Course {
     public Course() {
     }
 
-    public Course(String course_name, Teacher course_teacher, String perioada_predare) {
+    public Course(Integer id, String course_name, Teacher course_teacher, String perioada_predare) {
+        this.id = id;
         this.course_name = course_name;
         this.course_teacher = course_teacher;
         this.perioada_predare = perioada_predare;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCourse_name() {
         return course_name;
     }
 
-    public Teacher getCourse_teacher() {
-        return course_teacher;
+    public String getCourse_teacher() {
+        return course_teacher.getName();
+    }
+
+    public Integer getCourse_teacher1() {
+        return course_teacher.getId();
     }
 
     public String getPerioada_predare() {

@@ -6,16 +6,13 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class Reader_Teacher {
 
     public static void main(String[] args)
     {
-        List<Teacher> Profi = Read_Teacher("C:\\Users\\andre\\IntelliJIDEAProjects\\proiect_lab\\src\\Teachers.csv");
+        List<Teacher> Profi = Read_Teacher("C:\\Users\\andre\\IntelliJIDEAProjects\\pao\\src\\Teachers.csv");
         for (Teacher t : Profi)
         {
             System.out.println(t);
@@ -31,6 +28,7 @@ public class Reader_Teacher {
         try (BufferedReader br = Files.newBufferedReader(pathToFile,
                 StandardCharsets.US_ASCII)) {
             String line = br.readLine();
+
             while (line != null) {
                 String[] attributes = line.split(",");
                 Teacher t = createTeacher(attributes);
@@ -58,10 +56,12 @@ public class Reader_Teacher {
 
     private static Teacher createTeacher(String[] vector)
     {
-        String name= vector[0];
-        Integer grade= Integer.parseInt(vector[1]);
-        String salary= vector[2];
-        return new Teacher(name, grade,salary);
+
+        Integer id = Integer.parseInt(vector[0]);
+        String name= vector[1];
+        Integer grade= Integer.parseInt(vector[2]);
+        String salary= vector[3];
+        return new Teacher(id, name, grade,salary);
 
     }
 }

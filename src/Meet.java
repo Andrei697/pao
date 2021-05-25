@@ -2,13 +2,23 @@ import java.util.Objects;
 
 public class Meet {
 
-    //sincer stiu ca n-are niciun sens dar nu mi-a venit alta idee pt ultimul obiect.
+
+    private Integer id;
     private String Data;
     private Integer nr_participanti;
 
-    public Meet(String data, Integer nr_participanti) {
+    public Meet(Integer id,String data, Integer nr_participanti) {
+        this.id=id;
         Data = data;
         this.nr_participanti = nr_participanti;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Meet() {
